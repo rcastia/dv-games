@@ -99,7 +99,7 @@ class JuegosTableSeeder extends Seeder
             [
                 'nombre' => 'Uncharted 4',
                 'descripcion' => 'Uncharted 4: El desenlace del ladrón, es un videojuego de acción-aventura en tercera persona, lanzado el 10 de mayo de 2016, distribuido por Sony Computer Entertainment y desarrollado por Naughty Dog exclusivamente para PlayStation 4.',
-                'precio' => 1299,
+                'precio' => 129999,
                 'consola_id' => 1,
                 'formato_id' => 1,
                 'created_at' => date('Y-m-d'),
@@ -117,7 +117,7 @@ class JuegosTableSeeder extends Seeder
             [
                 'nombre' => 'Battlefield 1',
                 'descripcion' => 'Battlefield 1 es un videojuego de disparos y acción bélica en primera persona. El título fue desarrollado por DICE y distribuido mundialmente por Electronic Arts para PlayStation 4.',
-                'precio' => 2299,
+                'precio' => 229999,
                 'consola_id' => 1,
                 'formato_id' => 2,
                 'created_at' => date('Y-m-d'),

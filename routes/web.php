@@ -18,4 +18,7 @@ use App\Http\Controllers\PanelController;
 Route::get('/', [HomeController::class, 'homepage'])->name('home');
 
 //Panel
-Route::get('/panel', [PanelController::class, 'panel'])->name('panel');
+Route::prefix('/panel')->name('panel.')->group(function() {
+  Route::get('/', [PanelController::class, 'panel'])->name('panel');
+  Route::delete('/delete', [PanelController::class, 'delete'])->name('delete');
+});
