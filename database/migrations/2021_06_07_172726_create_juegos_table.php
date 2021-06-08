@@ -17,7 +17,7 @@ class CreateJuegosTable extends Migration
             $table->id();
             $table->string('nombre', 100);
             $table->text('descripcion');
-            $table->unsignedBigInteger('precio')->nullable();
+            $table->unsignedBigInteger('precio');
             $table->tinyInteger('consola_id');
             $table->tinyInteger('formato_id');
             $table->timestamps();

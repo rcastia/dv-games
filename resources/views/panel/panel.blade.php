@@ -8,7 +8,31 @@
   <div class="container px-5 py-12 mx-auto">
     <div class="w-full mx-auto overflow-auto lg:w-2/3">
 
-
+      @if(Session::has('success_message'))
+      <div class="w-10/12 container items-center px-5 py-0 lg:px-20 m-auto">
+        <div class="w-full text-white border rounded-lg shadow-xl bg-green-500">
+          <div class="flex items-center justify-between px-6 py-4 mx-auto ">
+            <div class="flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mr-4 icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 12l2 2l4 -4"></path>
+              </svg>
+              <p class="text-md font-semibold tracking-wide ">
+                {{ Session::get('success_message') }}
+              </p>
+            </div>
+            <button class="p-1 transition-colors duration-200 transform rounded-md hover:bg-opacity-25 hover:bg-blueGray-600 focus:outline-none" type="button" aria-label="Close" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M10 10l4 4m0 -4l-4 4"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      @endif
 
       <a href="{{ route('panel.create') }}" class="w-auto px-6 py-2 my-3 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 border-blue-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:bg-blue-400 float-right cursor-pointer">Nuevo Juego</a>
 
