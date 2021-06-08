@@ -20,5 +20,9 @@ Route::get('/', [HomeController::class, 'homepage'])->name('home');
 //Panel
 Route::prefix('/panel')->name('panel.')->group(function() {
   Route::get('/', [PanelController::class, 'panel'])->name('panel');
+  Route::get('/create', [PanelController::class, 'createpage'])->name('createpage');
+  Route::post('/create', [PanelController::class, 'create'])->name('create');
+  Route::get('/{juego}/editar', [PanelController::class, 'editpage'])->name('editpage');
+  Route::put('/{juego}/editar', [PanelController::class, 'edit'])->name('edit');
   Route::delete('/delete', [PanelController::class, 'delete'])->name('delete');
 });

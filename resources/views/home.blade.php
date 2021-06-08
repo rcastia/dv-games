@@ -1,8 +1,8 @@
 @extends('layouts.web')
 
-@section('content')
+@section('title', 'Home')
 
-<h1 class="text-4xl font-bold text-center py-4">JUEGOS</h1>
+@section('content')
 
 <section class="text-gray-700 ">
   <div class="container items-center px-5 py-12 lg:px-20 m-auto">
