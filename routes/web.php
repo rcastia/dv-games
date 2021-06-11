@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelController;
+use App\Http\Controllers\JuegoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,19 @@ use App\Http\Controllers\PanelController;
 */
 
 Route::get('/', [HomeController::class, 'homepage'])->name('home');
+Route::post('/purchase', [HomeController::class, 'purchase'])->name('home.purchase');
 
 //Panel
 Route::prefix('/panel')->name('panel.')->group(function() {
   Route::get('/', [PanelController::class, 'panel'])->name('panel');
-  Route::get('/create', [PanelController::class, 'createpage'])->name('createpage');
-  Route::post('/create', [PanelController::class, 'create'])->name('create');
-  Route::get('/{juego}/editar', [PanelController::class, 'editpage'])->name('editpage');
-  Route::put('/{juego}/editar', [PanelController::class, 'edit'])->name('edit');
-  Route::delete('/delete', [PanelController::class, 'delete'])->name('delete');
+  Route::get('/createpage', [PanelController::class, 'createpage'])->name('createpage');
+  Route::get('/{juego}/editpage', [PanelController::class, 'editpage'])->name('editpage');
+});
+
+//Juegos
+Route::prefix('/game')->name('game.')->group(function() {
+  Route::get('/{juego}', [JuegoController::class, 'show'])->name('show');
+  Route::post('/create', [JuegoController::class, 'create'])->name('create');
+  Route::put('/{juego}/edit', [JuegoController::class, 'edit'])->name('edit');
+  Route::delete('/delete', [JuegoController::class, 'delete'])->name('delete');
 });

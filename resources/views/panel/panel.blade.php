@@ -34,7 +34,7 @@
       </div>
       @endif
 
-      <a href="{{ route('panel.create') }}" class="w-auto px-6 py-2 my-3 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 border-blue-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:bg-blue-400 float-right cursor-pointer">Nuevo Juego</a>
+      <a href="{{ route('panel.createpage') }}" class="w-auto px-6 py-2 my-3 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 border-blue-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:bg-blue-400 float-right cursor-pointer">Nuevo Juego</a>
 
       <table class="w-full text-left whitespace-no-wrap table-auto">
         <thead>
@@ -60,7 +60,7 @@
                 <td class="px-4 py-2 text-lg bg-gray-50">
                   <button onclick="window.location.href='{{ route('panel.editpage', ['juego' => $juego->id]) }}'" role="button" class="px-4 py-1 mx-auto my-2 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-400 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Editar</button>
                   
-                  <form action="{{ route('panel.delete') }}" method="POST">
+                  <form action="{{ route('game.delete') }}" method="POST">
                     @csrf
                     @method('delete')
                     <input type="hidden" name="id" value="{{ $juego->id }}">

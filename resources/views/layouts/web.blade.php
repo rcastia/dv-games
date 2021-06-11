@@ -35,6 +35,7 @@
   </div>
 
   <h1 class="text-4xl font-bold text-center pt-4">@yield('title', '')</h1>
+  
 
   @yield('content')
 

@@ -9,7 +9,7 @@
 @section('content')
 
 <section class="text-blueGray-700 ">
-  <form action="{{ route('panel.edit', ['juego' => $juego->id]) }}" method="post">
+  <form action="{{ route('game.edit', ['juego' => $juego->id]) }}" method="post">
     @csrf
     @method('PUT')
     <div class="container items-center px-5 py-12 lg:px-20 mx-auto">

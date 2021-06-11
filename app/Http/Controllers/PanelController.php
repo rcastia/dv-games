@@ -21,37 +21,8 @@ class PanelController extends Controller
         return view('panel.create');
     }
 
-    public function create(Request $request)
-    {
-        $request->validate(Juego::$rules, Juego::$errorMessages);
-
-        Juego::create($request->only(['nombre', 'descripcion', 'precio', 'consola_id', 'formato_id']));
-
-        return redirect(route('panel.panel'))
-            ->withSuccessMessage('El juego ha sido creado exitosamente.');
-    }
-
     public function editpage(Juego $juego)
     {
         return view('panel.edit', compact('juego'));
-    }
-
-    public function edit(Request $request, Juego $juego)
-    {
-       $request->validate(Juego::$rules, Juego::$errorMessages);
-
-        $juego->update($request->only(['nombre', 'descripcion', 'precio', 'consola_id', 'formato_id']));
-
-        return redirect(route('panel.panel'))
-            ->withSuccessMessage('El juego ha sido editado exitosamente.');
-    }
-
-    public function delete(Request $request) {
-        
-        $juego = Juego::find($request->get('id'));
-        $juego->delete();
-
-        return redirect(route('panel.panel'))
-            ->withSuccessMessage('El juego "' . $juego->nombre . '" ha sido eliminado exitósamente.');
     }
 }

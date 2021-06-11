@@ -4,6 +4,32 @@
 
 @section('content')
 
+@if(Session::has('success_message'))
+<div class="w-10/12 container items-center px-5 py-0 lg:px-20 m-auto">
+  <div class="w-full text-white border rounded-lg shadow-xl bg-green-500">
+    <div class="flex items-center justify-between px-6 py-4 mx-auto ">
+      <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mr-4 icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M9 12l2 2l4 -4"></path>
+        </svg>
+        <p class="text-md font-semibold tracking-wide ">
+          {{ Session::get('success_message') }}
+        </p>
+      </div>
+      <button class="p-1 transition-colors duration-200 transform rounded-md hover:bg-opacity-25 hover:bg-blueGray-600 focus:outline-none" type="button" aria-label="Close" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M10 10l4 4m0 -4l-4 4"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+@endif
+
 <section class="text-gray-700 ">
   <div class="container items-center px-5 py-12 lg:px-20 m-auto">
     <div class="flex flex-wrap items-center justify-center w-full gap-4">
@@ -28,7 +54,7 @@
                   </svg>
                 </span>{{ $juego->formato_id }}
               </p>
-              <button role="button" class="w-full px-4 py-2 mt-6 text-base font-medium text-blue-600 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-300 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Ver más</button>
+              <button role="button" onclick="window.location.href='{{ route('game.show', ['juego' => $juego->id]) }}'" class="w-full px-4 py-2 mt-6 text-base font-medium text-blue-600 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-300 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Ver más</button>
             </div>
           </div>
         @endforeach
