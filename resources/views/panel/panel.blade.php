@@ -55,8 +55,8 @@
                 <td class="px-4 py-2 text-black text-center font-bold bg-gray-200">{{ $juego->id }}</td>
                 <td class="pl-4 py-2 text-black font-bold bg-gray-50">{{ $juego->nombre }}</td>
                 <td class="px-4 py-2 text-black text-center bg-gray-50">${{ $juego->precio / 100 }}</td>
-                <td class="px-4 py-2 text-black text-center bg-gray-50">{{ $juego->consola_id }}</td>
-                <td class="px-4 py-2 text-black text-center bg-gray-50">{{ $juego->formato_id }}</td>
+                <td class="px-4 py-2 text-black text-center bg-gray-50">{{ $juego->consola->nombre }}</td>
+                <td class="px-4 py-2 text-black text-center bg-gray-50">{{ $juego->formato->tipo }}</td>
                 <td class="px-4 py-2 text-lg bg-gray-50">
                   <button onclick="window.location.href='{{ route('panel.editpage', ['juego' => $juego->id]) }}'" role="button" class="px-4 py-1 mx-auto my-2 text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-lg hover:bg-blue-400 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Editar</button>
                   

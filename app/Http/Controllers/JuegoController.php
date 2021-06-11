@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\Juego;
+use App\Models\Consola;
+use App\Models\Formato;
 
 class JuegoController extends Controller
 {

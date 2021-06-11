@@ -10,8 +10,8 @@
       <h2 class="mb-8 text-2xl font-semibold leading-none tracking-tighter text-black title-font">{{ $juego->nombre }}</h2>
       <p><strong>Precio:</strong> ${{ $juego->precio / 100 }}</p>
       <ul>
-        <li><strong>Consola:</strong> {{ $juego->consola_id }}</li>
-        <li><strong>Formato:</strong> {{ $juego->formato_id }}</li>
+        <li><strong>Consola:</strong> {{ $juego->consola->nombre }}</li>
+        <li><strong>Formato:</strong> {{ $juego->formato->tipo }}</li>
       </ul>
       <p class="mx-auto text-base font-medium leading-relaxed text-blueGray-700 ">{{ $juego->descripcion }}</p>
       <div class="flex mt-4">

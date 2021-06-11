@@ -46,13 +46,13 @@
                 <span class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white rounded-full bg-black">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
                   </svg>
-                </span>{{ $juego->consola_id }}
+                </span>{{ $juego->consola->nombre }}
               </p>
               <p class="flex items-center mb-2 text-base font-medium tracking-tight text-gray-700">
                 <span class="inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 text-white bg-black rounded-full">
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
                   </svg>
-                </span>{{ $juego->formato_id }}
+                </span>{{ $juego->formato->tipo }}
               </p>
               <button role="button" onclick="window.location.href='{{ route('game.show', ['juego' => $juego->id]) }}'" class="w-full px-4 py-2 mt-6 text-base font-medium text-blue-600 transition duration-500 ease-in-out transform bg-blue-100 rounded-lg hover:bg-blue-300 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Ver más</button>
             </div>

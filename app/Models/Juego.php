@@ -35,4 +35,16 @@ public static $errorMessages = [
       'formato_id.required' => 'Ingrese el formato del videojuego, por favor.'
 ];
 
+public function consola() {
+
+  return $this->belongsTo(Consola::class);
+
+}
+
+public function formato() {
+
+  return $this->belongsTo(Formato::class);
+
+}
+
 }
