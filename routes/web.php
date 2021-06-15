@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\JuegoController;
 
@@ -18,6 +19,13 @@ use App\Http\Controllers\JuegoController;
 
 Route::get('/', [HomeController::class, 'homepage'])->name('home');
 Route::post('/purchase', [HomeController::class, 'purchase'])->name('home.purchase');
+
+//Autenticación
+Route::prefix('/auth')->name('auth.')->group(function() {
+  Route::get('/login', [AuthController::class, 'loginForm'])->name('loginform');
+  Route::post('/login', [AuthController::class, 'login'])->name('login');
+  Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
 
 //Panel
 Route::prefix('/panel')->name('panel.')->group(function() {
