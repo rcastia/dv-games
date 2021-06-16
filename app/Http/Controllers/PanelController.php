@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Juego;
+use App\Models\User;
 use App\Models\Consola;
 use App\Models\Formato;
 
@@ -24,5 +25,11 @@ class PanelController extends Controller
     public function editpage(Juego $juego)
     {
         return view('panel.edit', compact('juego'));
+    }
+
+    public function users()
+    {
+        $users = User::all();
+        return view('panel.users', compact('users'));
     }
 }

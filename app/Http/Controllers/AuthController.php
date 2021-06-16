@@ -25,7 +25,7 @@ class AuthController extends Controller
         $user = Auth::user();
 
         return redirect(route('home'))
-            ->withSuccessMessage("Bienvenido $user->username");
+            ->withSuccessMessage("Bienvenido $user->name $user->surname!");
     }
 
     public function logout(Request $request) {

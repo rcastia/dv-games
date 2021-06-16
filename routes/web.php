@@ -32,6 +32,7 @@ Route::prefix('/auth')->name('auth.')->group(function() {
 //Panel
 Route::prefix('/panel')->name('panel.')->group(function() {
   Route::get('/', [PanelController::class, 'panel'])->name('panel')->middleware(AuthMiddleware::class);
+  Route::get('/users', [PanelController::class, 'users'])->name('users')->middleware(AuthMiddleware::class);
   Route::get('/createpage', [PanelController::class, 'createpage'])->name('createpage')->middleware(AuthMiddleware::class);
   Route::get('/{juego}/editpage', [PanelController::class, 'editpage'])->name('editpage')->middleware(AuthMiddleware::class);
 });

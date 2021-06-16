@@ -52,10 +52,10 @@
           <div class="relative ">
             <select name="formato_id" class="w-full px-4 py-2 mt-2 text-base text-blueGray-500 transition duration-500 ease-in-out transform border border-transparent rounded-lg appearance-none bg-gray-100 focus:border-blue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
               <option class="block mb-4 text-xs font-bold tracking-wide text-blueGray-500 uppercase" value="1" <?= $juego->formato_id == "1" ? 'selected' : '';?> >
-              Digital
+              Físico
               </option>
               <option class="block mb-4 text-xs font-bold tracking-wide text-blueGray-500 uppercase" value="2" <?= $juego->formato_id == "2" ? 'selected' : '';?> >
-              Físico
+              Digital
               </option>
             </select>
             @error('formato_id')
