@@ -11,7 +11,7 @@
 
   <div class="container items-center m-auto">
     <div class="items-center justify-between w-full px-5 overflow-y-auto tflex whitespace-nowrap scroll-hidden border rounded-lg">
-      <div class="flex flex-col flex-wrap mx-auto md:items-center md:flex-row">
+      <div class="flex justify-between flex-col flex-wrap mx-auto md:items-center md:flex-row">
         <a href="/" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
           <div class="inline-flex items-center">
             <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-blue-500 to-blue-600">
@@ -29,7 +29,20 @@
             </li>
           </ul>
         </nav>
-        <button class="w-auto px-8 py-2 my-2 ml-auto text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 border-blue-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:b-gblue-700">Iniciar Sesión</button>
+        <div class="flex items-center">
+        @auth
+        <span class="px-4">Usuario: {{ Auth::user()->username }}</span>
+        <form action="{{ route('auth.logout') }}" method="post" class="px-4">
+          @csrf
+        <button class="w-auto px-3 py-2 my-2 ml-auto text-base font-medium text-white transition duration-500 ease-in-out transform bg-red-600 border-red-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:bg-red-700">Cerrar Sesión</button>
+        </form>
+        @else
+        <button  onclick="window.location.href='{{ route('auth.loginform') }}'" 
+        class="w-auto px-3 py-2 my-2 ml-auto text-base font-medium text-white transition duration-500 ease-in-out transform bg-blue-600 border-blue-600 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 hover:bg-blue-700">
+        Iniciar Sesión
+        </button>
+        @endauth
+        </div>
       </div>
     </div>
   </div>
